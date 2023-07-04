@@ -19,7 +19,7 @@ export const signupUser = async(request,response) => {
 
         return response.status(200).json({ msg: `signup successful`})
     }catch(error){
-        return response.status(200).json({ err: `error while signup`})
+        return response.status(200).json(error)
     }
 }
 

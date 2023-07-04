@@ -30,3 +30,13 @@ export const getAllDescription = async (request, response) => {
         response.status(500).json({err:'getalldescription failed'})
     }
 }
+
+export const getArticleById = async (request, response) => {
+    try {
+        const descriptions = await Description.findById(request.params.id);
+
+        response.status(200).json({ msg:'got descriptionById' , data: descriptions});
+    } catch (error) {
+        response.status(200).json({msg:'not recieved'})
+    }
+}

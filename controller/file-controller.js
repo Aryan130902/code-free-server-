@@ -4,7 +4,8 @@ import mongoose from 'mongoose';
 
 
 
-const url = 'http://localhost:8000';
+const url = 'https://breakable-eel-toga.cyclic.app';
+// const url = 'http://localhost:8000';
 
 
 let gfs, gridfsBucket;
@@ -26,7 +27,7 @@ export const uploadFile = (request, response) => {
     
     const fileUrl = `${url}/file/${request.file.filename}`;
 
-    response.status(200).json(fileUrl);    
+    response.status(200).json({msg:'successfully got image' , url : fileUrl});    
 }
 
 export const getFile = async(request, response) => {
